@@ -1,0 +1,7 @@
+//Logical Query
+db.obat.find({
+  $or: [
+    { kategori: { $ne: "Obat Bebas" } },
+    { stok: { $lt: 50 } }
+  ]
+});
