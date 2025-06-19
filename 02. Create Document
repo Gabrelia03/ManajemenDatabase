@@ -1,0 +1,43 @@
+//Create document
+db.obat.insertOne({
+kategori_id: ObjectId(),
+  kode_obat: "OBT001",
+  nama_obat: "Paracetamol 500mg",
+  satuan: "tablet",
+  harga_beli: 500,
+  stok: 120,
+  kadaluarsa: ISODate("2026-01-31T00:00:00Z"),
+  lokasi_penyimpanan: "Gudang Utama"
+})
+db.obat.insertMany([
+  {
+    kode_obat: "OBT001",
+    nama_obat: "Paracetamol 500mg",
+    kategori: "Obat Bebas",
+    satuan: "tablet",
+    harga_beli: 500,
+    stok: 120,
+    kadaluarsa: ISODate("2026-01-31T00:00:00Z"),
+    lokasi_penyimpanan: "Gudang Utama"
+  },
+  {
+    kode_obat: "OBT002",
+    nama_obat: "Amoxicillin 250mg",
+    kategori: "Antibiotik",
+    satuan: "kapsul",
+    harga_beli: 750,
+    stok: 80,
+    kadaluarsa: ISODate("2025-12-15T00:00:00Z"),
+    lokasi_penyimpanan: "Gudang B"
+  },
+  {
+    kode_obat: "OBT003",
+    nama_obat: "Antasida Doen",
+    kategori: "Obat Bebas Terbatas",
+    satuan: "tablet kunyah",
+    harga_beli: 300,
+    stok: 200,
+    kadaluarsa: ISODate("2026-05-10T00:00:00Z"),
+    lokasi_penyimpanan: "Apotek"
+  }
+])
