@@ -1,0 +1,26 @@
+//Schema Validation
+db.createCollection("obat", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["nama_obat", "stok", "kategori"],
+      properties: {
+        nama_obat: {
+          bsonType: "string",
+          description: "harus berupa string dan wajib diisi"
+        },
+        stok: {
+          bsonType: "int",
+          minimum: 0,
+          description: "harus berupa integer >= 0 dan wajib diisi"
+        },
+        kategori: {
+          bsonType: "string",
+          enum: ["Obat Bebas", "Antibiotik", "Obat Bebas Terbatas"],
+          description: "harus salah satu dari enum yang diizinkan"
+        }
+      }
+    }
+  }
+});
+
