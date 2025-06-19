@@ -1,0 +1,2 @@
+//Read document
+db.obat.find({ nama_obat: "Paracetamol 500mg" })
