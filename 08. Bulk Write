@@ -1,0 +1,25 @@
+//Bulk Write
+db.obat.bulkWrite([
+  {
+    insertOne: {
+      document: {
+        kode_obat: "OBT004",
+        nama_obat: "Cetirizine 10mg",
+        kategori: "Obat Bebas Terbatas",
+        satuan: "tablet",
+        harga_beli: 700,
+        stok: 90,
+        kadaluarsa: ISODate("2026-07-01"),
+        lokasi_penyimpanan: "Gudang B"
+      }
+    }
+  },
+
+  {
+    updateMany: {
+      filter: { kategori: "Obat Bebas" },
+      update: { $set: { status_aktif: true } }
+    }
+  }
+]);
+db.obat.find
