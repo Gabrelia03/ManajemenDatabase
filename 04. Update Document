@@ -1,0 +1,6 @@
+//Update document
+db.obat.updateOne(
+  { nama_obat: "Paracetamol 500mg" },
+  { $set: { stok: 150 } }
+);
+db.obat.find()
