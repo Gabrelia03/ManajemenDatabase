@@ -1,0 +1,6 @@
+//Comparision Query
+db.obat.find({
+  kadaluarsa: {
+    $lt: ISODate("2026-01-01")
+  }
+})
