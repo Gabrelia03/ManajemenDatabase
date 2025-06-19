@@ -1,0 +1,9 @@
+//Aggregation
+db.obat.aggregate([
+  {
+    $group: {
+      _id: "$kategori",          
+      total: { $sum: 1 }         
+    }
+  }
+]);
